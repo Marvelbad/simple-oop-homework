@@ -19,6 +19,6 @@ public class Main {
         System.out.println("\n📈 Общий доход от продаж: " + PersonApp.calculateTotalSales(employees));
 
         //Поиск сотрудника
-        System.out.println("\n🔍 Найден ли сотрудник? " + PersonApp.findEmployee(employees, "Alice", 35));
+        System.out.println("\n🔍 Найден ли сотрудник? " + PersonApp.findEmployee(employees, new Manager("Alice", 35, false, "TechCorp", "Manager", 5000, 2)));
     }
 }

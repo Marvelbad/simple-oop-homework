@@ -36,11 +36,12 @@ public class PersonApp {
     }
 
     //Поиск сотрудника
-//    public static boolean findEmployee(Employee[] employees, Employee employee) {
-//        for (Employee emp : employees) {
-//            if (emp.equals())
-//        }
-
+    public static boolean findEmployee(Employee[] employees, Employee employee) {
+        for (Employee emp : employees) {
+            if (emp.equals(employee)) {
+                return true;
+            }
+        }
         return false;
     }
 }
