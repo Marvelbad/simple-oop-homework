@@ -36,14 +36,11 @@ public class PersonApp {
     }
 
     //Поиск сотрудника
-    public static boolean findEmployee(Employee[] employees, String name, int age) {
-        if (employees == null || name == null) return false;
+//    public static boolean findEmployee(Employee[] employees, Employee employee) {
+//        for (Employee emp : employees) {
+//            if (emp.equals())
+//        }
 
-        for (Employee e : employees) {
-            if (e != null && e.getName().equalsIgnoreCase(name) && e.getAge() == age) {
-                return true;
-            }
-        }
         return false;
     }
 }
