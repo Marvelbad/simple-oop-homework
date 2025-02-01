@@ -35,4 +35,3 @@ public class SaleManager extends Employee {
         return Objects.hash(super.hashCode(), totalSales, bonus);
     }
 }
-//lombok and streams add!!! + Maven add inside project!!!!!
