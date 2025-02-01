@@ -1,5 +1,6 @@
 import java.util.Objects;
 
+
 public abstract class Employee extends Person {
     private final String company;
     private final String position;
@@ -19,6 +20,7 @@ public abstract class Employee extends Person {
         super.display();
         System.out.println("Company: " + company + ", Position: " + position + ", Base Salary: " + baseSalary);
     }
+
 
     public boolean equalsEmployee(Employee other) {
         return super.equals(other) &&

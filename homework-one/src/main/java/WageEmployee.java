@@ -1,4 +1,8 @@
 import java.util.Objects;
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
 
 public class WageEmployee extends Employee {
     private final double hours;
