@@ -1,14 +1,17 @@
+import java.util.Arrays;
+
 public class PersonApp {
 
     //Инфа о всех сотрудниках
     public static void displayAllEmployees(Employee[] employees) {
         if (employees == null) return;
-        for (Employee emp : employees) {
-            if (emp != null) {
-                emp.display();
-                System.out.println("________________________");
-            }
-        }
+
+        Arrays.stream(employees)
+                .filter(emp -> emp != null)
+                .forEach(emp -> {
+                    emp.display();
+                    System.out.println("______________________");
+                });
     }
 
     //Затраты компании
