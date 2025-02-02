@@ -17,13 +17,11 @@ public class PersonApp {
     //Затраты компании
     public static double calculateTotalExpenses(Employee[] employees) {
         if (employees == null) return 0;
-        double total = 0;
-        for (Employee e : employees) {
-            if (e != null) {
-                total += e.calculateSalary();
-            }
-        }
-        return total;
+
+        return Arrays.stream(employees)
+                .filter(emp -> emp != null)
+                .mapToDouble(Employee::calculateSalary)
+                .sum();
     }
 
     //Доход компании
