@@ -1,4 +1,11 @@
 import java.util.Objects;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@EqualsAndHashCode(callSuper = true) // Учитываем родительский класс, но не генерируем методы
+@ToString(callSuper = true) // Генерируем toString, включая поля родительского класса
 
 public class Manager extends Employee {
     int grade;
@@ -17,19 +24,5 @@ public class Manager extends Employee {
     public void display() {
         super.display();
         System.out.println("Grade: " + grade + ", Total salary: " + calculateSalary());
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        if (!super.equals(obj)) return false;
-        Manager manager = (Manager) obj;
-        return grade == manager.grade;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), grade);
     }
 }

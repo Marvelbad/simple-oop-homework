@@ -1,4 +1,11 @@
 import java.util.Objects;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+@EqualsAndHashCode(callSuper = true)
+@Getter
+@ToString(callSuper = true)
 
 public class SaleManager extends Employee {
     private final double totalSales;
@@ -21,17 +28,5 @@ public class SaleManager extends Employee {
         System.out.println("Total sales: " + totalSales + ", Bonus: " + bonus + "%, Total salary: " + calculateSalary());
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        if (!super.equals(obj)) return false;
-        SaleManager saleManager = (SaleManager) obj;
-        return Double.compare(saleManager.totalSales, totalSales) == 0;
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), totalSales, bonus);
-    }
 }

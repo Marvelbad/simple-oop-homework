@@ -1,14 +1,16 @@
 import lombok.Getter;
 import lombok.AllArgsConstructor;
 
+@Getter
 @AllArgsConstructor
+
 public abstract class Person {
-    private final String name;
-    @Getter
     private int age;
+    private final String name;
     private final boolean married;
 
     public void display() {
-        System.out.println("Name: " + name + " Age: " + age + " Married: " + married);
+        System.out.println("Age: " + age + " Name: " + name + " Married: " + married);
     }
 }
+

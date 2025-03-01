@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -8,6 +11,8 @@ public class Main {
         System.out.println(getWordsReverse("Hello my nice world"));
 
         System.out.println(getWordsReverseInColumn("Hello my nice world"));
+
+        System.out.println(maxCharIndex("ddcccabbbb"));
     }
 
     /**
@@ -106,5 +111,39 @@ public class Main {
             result.append(builder.reverse().toString()).append("\n");
         }
         return result.toString().trim();
+    }
+
+    /// ///////////////
+
+    /**
+     * MAX CHAR INDEX
+     */
+
+    public static int maxCharIndex(String str) {
+        if (str == null || str.trim().isEmpty()) {
+            return -1;
+        }
+
+        Map<Character, Integer> charCount = new HashMap<>();
+        for (char c : str.toCharArray()) {
+            charCount.put(c, charCount.getOrDefault(c, 0) + 1);
+        }
+
+        // Определяю максимальное количество вхождений
+        int maxFrequency = 0;
+        for (int frequency : charCount.values()) {
+            if (frequency > maxFrequency) {
+                maxFrequency = frequency;
+            }
+        }
+
+        // Находим индекс первого символа с максимальной частотой
+        for (int i = 0; i < str.length(); i++) {
+            if (charCount.get(str.charAt(i)) == maxFrequency) {
+                return i;  // символ с максимальной частотой
+            }
+        }
+
+        return -1;
     }
 }

@@ -1,5 +1,14 @@
 import java.util.Objects;
 
+import lombok.AllArgsConstructor;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.ToString;
+
+@Getter
+@EqualsAndHashCode(callSuper = true)
+@ToString(callSuper = true)
+
 
 public abstract class Employee extends Person {
     private final String company;
@@ -7,7 +16,7 @@ public abstract class Employee extends Person {
     protected double baseSalary;
 
     public Employee(String name, int age, boolean married, String company, String position, double baseSalary) {
-        super(name, age, married);
+        super(age, name, married);
         this.company = company;
         this.position = position;
         this.baseSalary = baseSalary;
@@ -19,13 +28,5 @@ public abstract class Employee extends Person {
     public void display() {
         super.display();
         System.out.println("Company: " + company + ", Position: " + position + ", Base Salary: " + baseSalary);
-    }
-
-
-    public boolean equalsEmployee(Employee other) {
-        return super.equals(other) &&
-                Objects.equals(company, other.company) &&
-                Objects.equals(position, other.position) &&
-                Double.compare(baseSalary, other.baseSalary) == 0;
     }
 }

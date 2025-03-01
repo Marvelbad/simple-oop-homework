@@ -8,17 +8,17 @@ public class Main {
         employees[1] = new SaleManager("Bob", 38, true, "SaleInc", "Senior Sales", 3000, 20000, 5);
         employees[2] = new WageEmployee("Eva", 86, false, "Old LadyInc", "Junior sales", 2500, 15000, 3);
 
-        //Список сотрудников
+        // List of employees
         System.out.println("📢 Список сотрудников:");
         PersonApp.displayAllEmployees(employees);
 
-        //Затраты
+        // Total expenses
         System.out.println("\n💰 Общие затраты компании: " + PersonApp.calculateTotalExpenses(employees));
 
-        //Доходы от продаж
+        // Total sales
         System.out.println("\n📈 Общий доход от продаж: " + PersonApp.calculateTotalSales(employees));
 
-        //Поиск сотрудника
+        // Find employee
         System.out.println("\n🔍 Найден ли сотрудник? " + PersonApp.findEmployee(employees, new Manager("Alice", 35, false, "TechCorp", "Manager", 5000, 2)));
     }
 }
