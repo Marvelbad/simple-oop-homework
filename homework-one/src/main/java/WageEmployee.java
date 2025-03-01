@@ -1,10 +1,8 @@
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
-import lombok.ToString;
 
 @Getter
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
 
 public class WageEmployee extends Employee {
     private final double hours;

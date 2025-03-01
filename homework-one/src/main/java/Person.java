@@ -1,8 +1,10 @@
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.AllArgsConstructor;
 
 @Getter
 @AllArgsConstructor
+@EqualsAndHashCode
 
 public abstract class Person {
     private int age;

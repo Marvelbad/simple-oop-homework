@@ -1,4 +1,4 @@
-import org.w3c.dom.ls.LSOutput;
+
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +19,6 @@ public class Main {
         System.out.println("\n📈 Общий доход от продаж: " + PersonApp.calculateTotalSales(employees));
 
         // Find employee
-        System.out.println("\n🔍 Найден ли сотрудник? " + PersonApp.findEmployee(employees, new Manager("Alice", 35, false, "TechCorp", "Manager", 5000, 2)));
+        System.out.println("\n🔍 Найден ли сотрудник? " + PersonApp.findEmployee(employees, new Manager("Alice", 35, false, "FoxConn", "TeamLead", 5000, 4)));
     }
 }
