@@ -2,6 +2,7 @@
 
 public class Main {
     public static void main(String[] args) {
+
         Employee[] employees = new Employee[3];
 
         employees[0] = new Manager("Alice", 35, false, "FoxConn", "TeamLead", 5000, 4);
@@ -20,5 +21,6 @@ public class Main {
 
         // Find employee
         System.out.println("\n🔍 Найден ли сотрудник? " + PersonApp.findEmployee(employees, new Manager("Alice", 35, false, "FoxConn", "TeamLead", 5000, 4)));
+
     }
 }

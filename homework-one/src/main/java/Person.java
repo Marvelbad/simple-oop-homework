@@ -1,18 +1,19 @@
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.AllArgsConstructor;
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 @Getter
+@ToString
 @AllArgsConstructor
 @EqualsAndHashCode
+@FieldDefaults(level = AccessLevel.PRIVATE)
+public class Person {
 
-public abstract class Person {
-    private int age;
-    private final String name;
-    private final boolean married;
+    int age;
+    final String name;
+    final boolean married;
 
     public void display() {
-        System.out.println("Age: " + age + " Name: " + name + " Married: " + married);
+        System.out.println(this);
     }
 }
 

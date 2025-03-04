@@ -1,5 +1,5 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -79,16 +79,15 @@ public class Main {
      */
 
     public static String getWordsReverse(String str) {
-        if (str == null || str.isEmpty() || str.trim().isEmpty())
-            return null;
+        if (Objects.isNull(str) || str.isBlank())  return null;
 
-        String[] words = str.split(" ");
-        StringBuilder result = new StringBuilder();
-        for (int i = words.length - 1; i >= 0; i--) {
-            String txt = words[i];
-            result.append(txt).append(" ");
-        }
-        return result.toString().trim();
+//        return Arrays.stream(str.split(" "))
+//                .collect(Collectors.collectingAndThen(Collectors.toList(), list -> {
+//                    Collections.reverse(list);
+//                    return String.join(" ", list);
+//                }));
+
+        return String.join(" ", Arrays.asList(str.split(" ")).reversed());
     }
 
     /// ///////////////
@@ -102,15 +101,11 @@ public class Main {
             System.out.println("Wrong string");
         }
 
-        assert str != null;
-        String[] words = str.split(" ");
-        StringBuilder result = new StringBuilder();
-        for (int i = 0; i < words.length; i++) {
-            String word = words[i];
-            StringBuilder builder = new StringBuilder(word);
-            result.append(builder.reverse().toString()).append("\n");
-        }
-        return result.toString().trim();
+        return Arrays.stream(str.split(" "))
+                .map(StringBuilder::new)
+                .map(StringBuilder::reverse)
+//                .map(word -> new StringBuilder(word).reverse().toString())
+                .collect(Collectors.joining(System.lineSeparator()));
     }
 
     /// ///////////////
@@ -129,18 +124,18 @@ public class Main {
             charCount.put(c, charCount.getOrDefault(c, 0) + 1);
         }
 
-        // Определяю максимальное количество вхождений
+
         int maxFrequency = 0;
-        for (int frequency : charCount.values()) {
+        for (int frequency : charCount.values()) { /// /////////////////// STREAM API !!!!!!!!!!!!!!!!!!!
             if (frequency > maxFrequency) {
                 maxFrequency = frequency;
             }
         }
 
-        // Находим индекс первого символа с максимальной частотой
+
         for (int i = 0; i < str.length(); i++) {
             if (charCount.get(str.charAt(i)) == maxFrequency) {
-                return i;  // символ с максимальной частотой
+                return i;
             }
         }
 
