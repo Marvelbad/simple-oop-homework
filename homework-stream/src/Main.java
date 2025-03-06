@@ -22,7 +22,6 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
         //Тесты и вызов методов с заданием
         //Задание 1
         task1();
